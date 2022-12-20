@@ -65,7 +65,6 @@ func TestIntegrationAccountInfoQueryCanExecute(t *testing.T) {
 	assert.Equal(t, newKey.PublicKey(), info.Key)
 	assert.Equal(t, newBalance.tinybar, info.Balance.tinybar)
 
-
 	tx, err := NewAccountDeleteTransaction().
 		SetAccountID(accountID).
 		SetNodeAccountIDs([]AccountID{resp.NodeID}).
@@ -115,7 +114,7 @@ func TestIntegrationAccountInfoQueryGetCost(t *testing.T) {
 
 	cost, err := accountInfo.GetCost(env.Client)
 	require.NoError(t, err)
-	
+
 	info, err := accountInfo.SetQueryPayment(cost).Execute(env.Client)
 	require.NoError(t, err)
 

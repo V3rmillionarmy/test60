@@ -40,7 +40,6 @@ func TestIntegrationFileCreateTransactionCanExecute(t *testing.T) {
 		SetTransactionMemo("go sdk e2e tests").
 		Execute(env.Client)
 
-
 	require.NoError(t, err)
 
 	receipt, err := resp.GetReceipt(env.Client)
